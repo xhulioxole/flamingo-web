@@ -34,5 +34,11 @@ body {
 }
 
 .main-container {
-  padding: 20px;
+  padding: 30px;
+}
+
+.angular-google-map-container {
+    height: calc(100% - 192px); /*h70 + f62 + p60*/
+    width: calc(100% - 60px); /*Padding 30px*/
+    position: absolute;
 }

@@ -3,7 +3,9 @@
     border: none;
     border-radius: 0;
     padding: 10px;
+    margin-bottom: 0;
 }
+
 .header .navbar-header {
     float: none !important;
     width: 350px;

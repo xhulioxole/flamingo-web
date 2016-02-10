@@ -9,6 +9,9 @@ config(['$routeProvider', function($routeProvider) {
       .when('/home', {
           templateUrl: 'components/home/home.html',
           controller: 'HomeCtrl'
+      }).when('/contact', {
+          templateUrl: 'components/contact/contact.html',
+          controller: 'ContactCtrl'
       })
       .when('/statistics', {
           templateUrl: 'components/statistics/statistics.html',

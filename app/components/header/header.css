@@ -1,0 +1,22 @@
+.header {
+    background-color: #2C3E50;
+    border: none;
+    border-radius: 0;
+    padding: 10px;
+}
+.header .navbar-header {
+    float: none !important;
+    width: 350px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.header a {
+    color: white !important;
+}
+
+.logo {
+    width: 40px;
+    position: relative;
+    top: -4px;
+}

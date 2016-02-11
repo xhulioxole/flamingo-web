@@ -3,7 +3,8 @@
 // Declare app level module which depends on views, and components
 angular.module('flamingoApp', [
     'ngRoute',
-    'uiGmapgoogle-maps'
+    'uiGmapgoogle-maps',
+    'toastr'
 ])
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider

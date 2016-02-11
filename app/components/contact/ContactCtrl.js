@@ -4,5 +4,12 @@
  */
 
 angular.module("flamingoApp").controller("ContactCtrl", ['$scope', function ($scope) {
-    console.log("Contact");
+    $scope.support = {};
+
+    /**
+     * Send message
+     */
+    $scope.send = function () {
+        console.log($scope.support);
+    };
 }]);

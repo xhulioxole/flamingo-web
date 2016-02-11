@@ -1,1 +1,20 @@
-contact
+<div class="contact-container">
+    <h3 class="view-title">Na Kontaktoni</h3>
+    <form name="contactForm" ng-submit="contactForm.$valid && send()">
+        <div class="form-group">
+            <label for="name">Emer</label>
+            <input type="text" class="form-control contact-input" id="name" placeholder="Emer" ng-model="support.name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control contact-input" id="email" placeholder="Email" ng-model="support.email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Mesazh</label>
+            <textarea type="message" class="form-control contact-input" id="message" placeholder="Mesazh" required ng-model="support.message" ng-minlength="10">
+
+            </textarea>
+        </div>
+        <button ng-disabled="contactForm.$invalid" type="submit" class="btn btn-primary send-button ">Dergo</button>
+    </form>
+</div>

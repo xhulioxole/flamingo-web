@@ -16,7 +16,7 @@ angular.module("flamingoApp").controller("ContactCtrl", ['$scope', 'Http', 'toas
                 from: $scope.support.email,
                 message: $scope.support.message
             }
-            Http.GET(Constants.Url.CONTACT, formData)
+            Http.PUT(Constants.Url.CONTACT, formData)
                 .then(function (success) {
                     $scope.support = {};
                     toastr.success(Constants.Messages.SUCCESS_CONTACT);

@@ -4,7 +4,8 @@
 angular.module('flamingoApp', [
     'ngRoute',
     'uiGmapgoogle-maps',
-    'toastr'
+    'toastr',
+    'ui.bootstrap.datetimepicker'
 ])
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider

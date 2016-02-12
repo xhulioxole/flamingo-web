@@ -5,13 +5,13 @@
 
 
 var BaseConstants = {
-    REST: "http://52.29.253.166:8080/rest"
+    REST: "http://localhost:8080/flamingo/rest"
 };
 
 angular.module("flamingoApp").constant('Constants', {
     Url: {
         STATISTICS: BaseConstants.REST + '/statistics',
-        CONTACT: BaseConstants.REST + '/contact'
+        CONTACT: BaseConstants.REST + '/support'
     },
     Messages: {
         SUCCESS_CONTACT: "Mesazhi u dergua me sukses!",

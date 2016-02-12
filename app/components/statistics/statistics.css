@@ -1,0 +1,27 @@
+.statistics-container .filter-input {
+    height: 40px;
+    background-color: rgb(214, 221, 227);
+    border-radius: 4px;
+    border: medium none;
+    color: black;
+}
+
+.statistics-container .input-group-addon {
+    background-color: #2C3E50;
+    color: white;
+}
+
+.filter-button {
+    background-color: #2C3E50;
+    color: white;
+    height: 40px;
+    margin-left: 15px;
+}
+
+.filter-button:hover {
+    background-color: #3E5771 !important;
+    color: white;
+}
+.filter-button[disabled] {
+    background-color: #2C3E50 !important;
+}

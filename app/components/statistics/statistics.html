@@ -1,9 +1,59 @@
 <div class="statistics-container">
     <h3 class="view-title">Statistika</h3>
-    <div>Filter</div>
+    <div class="filter-container">
+        <!-- Filter section -->
+        <div class="row">
+            <!-- Location Section-->
+            <div class="form-group col-md-2">
+                <label>Vendodhjet</label>
+                <select class="form-control filter-input" ng-model="filterData.locationId" ng-options="location._id as location.name for location in locations"></select>
+            </div>
+            <!-- Start Date Section -->
+            <div class="form-group col-md-2">
+                <label>Data Fillimit</label>
+                <div class="dropdown">
+                    <a class="dropdown-toggle" id="startDateDropDown" role="button" data-toggle="dropdown">
+                        <div class="input-group">
+                            <input type="text" class="form-control filter-input" data-ng-model="filterData.startDate | date: 'dd/MM/yyyy HH:mm'">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </span>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <datetimepicker data-ng-model="filterData.startDate" data-datetimepicker-config="{ dropdownSelector: '#endDateDropDown', minView: 'hour' }"/>
+                    </ul>
+                </div>
+            </div>
+            <!-- End Date Section -->
+            <div class="form-group col-md-2">
+                <label>Data Mbarimit</label>
+                <div class="dropdown">
+                    <a class="dropdown-toggle" id="endDateDropDown" role="button" data-toggle="dropdown">
+                        <div class="input-group">
+                            <input type="text" class="form-control filter-input" data-ng-model="filterData.endDate | date: 'dd/MM/yyyy HH:mm'">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </span>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <datetimepicker data-ng-model="filterData.endDate" data-datetimepicker-config="{ dropdownSelector: '#endDateDropDown', minView: 'hour' }"/>
+                    </ul>
+                </div>
+            </div>
+            <!-- Submit filter -->
+            <div class="form-group col-md-2">
+                <label>&nbsp;</label>
+                <button ng-disabled="filterData.startDate > filterData.endDate" class="btn btn-default form-control filter-button" type="button" ng-click="filter()">
+                    Filtro
+                </button>
+            </div>
+        </div>
+    </div>
     <div class="row">
-        <div class="col-lg-4" id="area-chart-container" style="height:400px; margin: 0 auto"></div>
-        <div class="col-lg-4" id="pie-chart-container" style="height:400px"></div>
-        <div class="col-lg-4" id="column-chart-container" style="height:400px"></div>
+        <div class="col-lg-4" id="monthly-statistics" style="height:400px; margin: 0 auto"></div>
+        <div class="col-lg-4" id="locations-statistics" style="height:400px"></div>
+        <div class="col-lg-4" id="weekly-statistics" style="height:400px"></div>
     </div>
 </div>

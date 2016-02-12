@@ -24,3 +24,7 @@
 .filter-button[disabled] {
     background-color: #2C3E50 !important;
 }
+
+.statistics-row {
+    margin: 40px 0;
+}

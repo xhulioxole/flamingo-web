@@ -4,12 +4,12 @@
         <!-- Filter section -->
         <div class="row">
             <!-- Location Section-->
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-3 col-lg-2">
                 <label>Vendodhjet</label>
                 <select class="form-control filter-input" ng-model="filterData.locationId" ng-options="location._id as location.name for location in locations"></select>
             </div>
             <!-- Start Date Section -->
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-3 col-lg-2">
                 <label>Data Fillimit</label>
                 <div class="dropdown">
                     <a class="dropdown-toggle" id="startDateDropDown" role="button" data-toggle="dropdown">
@@ -26,7 +26,7 @@
                 </div>
             </div>
             <!-- End Date Section -->
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-3 col-lg-2">
                 <label>Data Mbarimit</label>
                 <div class="dropdown">
                     <a class="dropdown-toggle" id="endDateDropDown" role="button" data-toggle="dropdown">
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <!-- Submit filter -->
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-3 col-lg-2">
                 <label>&nbsp;</label>
                 <button ng-disabled="filterData.startDate > filterData.endDate" class="btn btn-default form-control filter-button" type="button" ng-click="filter()">
                     Filtro

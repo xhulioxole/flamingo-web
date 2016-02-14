@@ -3,11 +3,11 @@
  * Created Date: 2016-02-10 18:03.MD
  */
 
-angular.module("flamingoApp").factory("Http", ['$http', 'Utils', function ($http, Utils) {
+angular.module("flamingoApp").factory("Http", ['$http', 'Utils', 'ENDPOINT', function ($http, Utils, ENDPOINT) {
     return {
         GET: function (url, data) {
             return $http({
-                url: url,
+                url: ENDPOINT + url,
                 method: "GET",
                 params: data
             });
@@ -15,7 +15,7 @@ angular.module("flamingoApp").factory("Http", ['$http', 'Utils', function ($http
 
         PUT: function (url, formData) {
             return $http({
-                url: url,
+                url: ENDPOINT + url,
                 method: "PUT",
                 data: Utils.buildFormData(formData),
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
@@ -24,7 +24,7 @@ angular.module("flamingoApp").factory("Http", ['$http', 'Utils', function ($http
 
         POST: function (url, formData) {
             return $http({
-                url: url,
+                url: ENDPOINT + url,
                 method: "POST",
                 data: Utils.buildFormData(formData),
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
@@ -33,7 +33,7 @@ angular.module("flamingoApp").factory("Http", ['$http', 'Utils', function ($http
 
         DELETE: function (url, data) {
             return $http({
-                url: url,
+                url: ENDPOINT + url,
                 method: "DELETE",
                 params: data
             })

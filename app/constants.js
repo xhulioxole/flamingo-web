@@ -3,15 +3,10 @@
  * Created Date: 2016-02-10 18:01.MD
  */
 
-
-var BaseConstants = {
-    REST: "http://192.168.1.45:8080/flamingo/rest"
-};
-
 angular.module("flamingoApp").constant('Constants', {
     Url: {
-        STATISTICS: BaseConstants.REST + '/statistics',
-        CONTACT: BaseConstants.REST + '/support'
+        STATISTICS: '/statistics',
+        CONTACT: '/support'
     },
     Messages: {
         SUCCESS_CONTACT: "Mesazhi u dergua me sukses!",

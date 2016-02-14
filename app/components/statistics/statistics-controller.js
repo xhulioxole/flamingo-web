@@ -7,7 +7,21 @@ window.onload = function () {
 };
 
 
-angular.module("flamingoApp").controller("StatisticsCtrl", ['$scope', function ($scope) {
+angular.module("flamingoApp").controller("StatisticsCtrl", ['$scope', 'Http', 'Constants', function ($scope, Http, Constants) {
+
+    /**
+     * Get stats
+     */
+    function getStats() {
+        Http.GET(Constants.Url.STATISTICS, $scope.filterData)
+            .then(function (success) {
+                console.log(success);
+            }, function (error) {
+                console.log(error);
+            });
+    }
+
+    getStats();
 
     $scope.locations = [
         {
@@ -30,6 +44,7 @@ angular.module("flamingoApp").controller("StatisticsCtrl", ['$scope', function (
         endDate: new Date()
     };
     $scope.invalidFilter = false;
+
     /**
      * Validate filter on change
      */
@@ -41,13 +56,12 @@ angular.module("flamingoApp").controller("StatisticsCtrl", ['$scope', function (
      * Filter data
      */
     $scope.filter = function () {
-      console.log($scope.filterData);
+      getStats();
     };
 
     drawLocationStatistics();
     drawMonthlyReservations();
     drawVehicleReservations();
-
 
     window.addEventListener("resize", function () {
         drawLocationStatistics();

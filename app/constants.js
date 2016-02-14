@@ -5,7 +5,7 @@
 
 
 var BaseConstants = {
-    REST: "http://localhost:8080/flamingo/rest"
+    REST: "http://192.168.1.45:8080/flamingo/rest"
 };
 
 angular.module("flamingoApp").constant('Constants', {

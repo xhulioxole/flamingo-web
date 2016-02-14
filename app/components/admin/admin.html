@@ -1,6 +1,28 @@
 <div class="admin-container">
-    <h3 class="view-title">Admin</h3>
+    <h3 class="view-title"></h3>
     <div class="filter-container">
-       
+        <!-- Push -->
+        <div class="form-group col-md-3 col-lg-2">
+            <button class="btn btn-default form-control default-button" type="button" ng-click="changeView(views.SUPPORT)">
+                Support
+            </button>
+        </div>
+        <!-- Push -->
+        <div class="form-group col-md-3 col-lg-2">
+            <button class="btn btn-default form-control default-button" type="button" ng-click="changeView(views.LOCATION)">
+                Vendodhjet
+            </button>
+        </div>
+        <!-- Push -->
+        <div class="form-group col-md-3 col-lg-2">
+            <button class="btn btn-default form-control default-button" type="button" ng-click="changeView(views.PUSH)">
+                Dergo Njoftim
+            </button>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+    <br/>
+    <div class="admin-content">
+        <div ng-include="currentView"></div>
     </div>
 </div>

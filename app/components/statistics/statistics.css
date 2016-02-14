@@ -11,17 +11,17 @@
     color: white;
 }
 
-.filter-button {
+.default-button {
     background-color: #2C3E50;
     color: white;
     height: 40px;
 }
 
-.filter-button:hover {
+.default-button:hover {
     background-color: #3E5771 !important;
     color: white;
 }
-.filter-button[disabled] {
+.default-button[disabled] {
     background-color: #2C3E50 !important;
 }
 

@@ -23,8 +23,17 @@ angular.module('flamingoApp', [
       .when('/admin', {
           templateUrl: 'components/admin/admin.html',
           controller: 'AdminCtrl'
+      })
+     .when('/login', {
+        templateUrl: 'components/login/login.html',
+        controller: 'LoginCtrl'
       });
   $routeProvider.otherwise({redirectTo: '/home'});
 }]);
 
-angular.module('flamingoApp').value('ENDPOINT', "http://localhost:8080/flamingo/rest");
+angular.module('flamingoApp').run(['$rootScope', '$location', function ($rootScope, $location) {
+    // TODO - Check admin route
+    // TODO - Check login route
+}]);
+
+angular.module('flamingoApp').value('ENDPOINT', "http://localhost:8080/flamingo/rest"); //

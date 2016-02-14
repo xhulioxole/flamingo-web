@@ -26,3 +26,5 @@ angular.module('flamingoApp', [
       });
   $routeProvider.otherwise({redirectTo: '/home'});
 }]);
+
+angular.module('flamingoApp').value('ENDPOINT', "http://localhost:8080/flamingo/rest");

@@ -19,6 +19,10 @@ angular.module('flamingoApp', [
       .when('/statistics', {
           templateUrl: 'components/statistics/statistics.html',
           controller: 'StatisticsCtrl'
+      })
+      .when('/admin', {
+          templateUrl: 'components/admin/admin.html',
+          controller: 'AdminCtrl'
       });
   $routeProvider.otherwise({redirectTo: '/home'});
 }]);

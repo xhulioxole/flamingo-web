@@ -18,5 +18,9 @@ angular.module("flamingoApp").constant('Constants', {
         LOGIN_ERROR: "Email / Password Gabim!",
         PUSH_SUCCESS: "Njoftimi u dergua!",
         PUSH_ERROR: "Njoftimi nuk u dergua!"
+    },
+    Keys: {
+        USER_DATA: "userData",
+        TOKEN: "token"
     }
 });

@@ -2,8 +2,8 @@
  * Created by Xhulio on 2/14/2016.
  */
 
-angular.module("flamingoApp").controller("LoginCtrl", ['$scope', 'Http', 'toastr', '$location',
-    function ($scope, Http, toastr, $location) {
+angular.module("flamingoApp").controller("LoginCtrl", ['$scope', 'Http', 'toastr', '$location', 'localStorageService', 'Constants',
+    function ($scope, Http, toastr, $location, localStorageService, Constants) {
         $scope.user = {
             email: '',
             password: ''
@@ -19,14 +19,13 @@ angular.module("flamingoApp").controller("LoginCtrl", ['$scope', 'Http', 'toastr
                     if (response.error) {
                         toastr.error(Constants.Messages.LOGIN_ERROR);
                     } else {
-                        window.localStorage["flamingoData"] = response.token;
-                        window.localStorage["flamingoData"] = response.user;
+                        localStorageService.set(Constants.Keys.USER_DATA, response.user);
+                        localStorageService.set(Constants.Keys.TOKEN, response.token);
                         $location.path("/admin");
                     }
                 }, function (error) {
                     toastr.error(Constants.Messages.LOGIN_ERROR);
                 });
-            console.log($scope.user);
         };
     }
 ]);

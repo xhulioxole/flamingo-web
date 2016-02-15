@@ -7,33 +7,22 @@ angular.module('flamingoApp', [
     'toastr',
     'ui.bootstrap.datetimepicker'
 ])
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider
-      .when('/home', {
-          templateUrl: 'components/home/home.html',
-          controller: 'HomeCtrl'
-      }).when('/contact', {
-          templateUrl: 'components/contact/contact.html',
-          controller: 'ContactCtrl'
-      })
-      .when('/statistics', {
-          templateUrl: 'components/statistics/statistics.html',
-          controller: 'StatisticsCtrl'
-      })
-      .when('/admin', {
-          templateUrl: 'components/admin/admin.html',
-          controller: 'AdminCtrl'
-      })
-     .when('/login', {
-        templateUrl: 'components/login/login.html',
-        controller: 'LoginCtrl'
-      });
-  $routeProvider.otherwise({redirectTo: '/home'});
-}]);
 
-angular.module('flamingoApp').run(['$rootScope', '$location', function ($rootScope, $location) {
-    // TODO - Check admin route
-    // TODO - Check login route
+.run(['$rootScope', '$location', 'Constants', function ($rootScope, $location, Constants) {
+    $rootScope.$on('$routeChangeStart', function (event, next) {
+        // Prevent opening login if logged in
+        if ($location.path() === '/login' && localStorageService.get(Constants.Keys.USER_DATA) && localStorageService.get(Constants.Keys.TOKEN)) {
+            event.preventDefault();
+        }
+
+        // Prevent opening admin if not logged in
+        if ($location.path() === '/admin') {
+            if (!localStorageService.get(Constants.Keys.USER_DATA) || !localStorageService.get(Constants.Keys.TOKEN)) {
+                event.preventDefault();
+                $location.path('/login');
+            }
+        }
+    });
 }]);
 
 angular.module('flamingoApp').value('ENDPOINT', "http://localhost:8080/flamingo/rest"); //

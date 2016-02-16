@@ -50,10 +50,19 @@
         <ng-map class="maps-container"
                 zoom="{{mapConfig.zoom}}"
                 center="{{mapConfig.center.lat}}, {{mapConfig.center.lng}}">
-            <marker id="{{statistic.location.name}}" on-click="showInfoWindow(e, statistic)" ng-repeat="statistic in statistics" position="{{statistic.location.lat}}, {{statistic.location.lng}}" icon="{{statistic.icon}}"></marker>
+            <marker
+                    id="{{statistic.location.name}}"
+                    on-click="showIW(statistic)"
+                    ng-repeat="statistic in statistics"
+                    position="{{statistic.location.lat}}, {{statistic.location.lng}}"
+                    icon="{{statistic.icon}}">
+            </marker>
             <info-window id="marker-iw">
                 <div ng-non-bindable="">
-                    title: {{selectedStatistic.title}}<br/>
+                    <b>Emri:</b> {{selectedStatistic.location.name}}<br/><br/>
+                    <b>Latitude:</b> {{selectedStatistic.location.lat}}<br/><br/>
+                    <b>Longitude:</b> {{selectedStatistic.location.lng}}<br/><br/>
+                    <b>Nr i Makinave:</b> {{selectedStatistic.vehiclesNumber}}<br/>
                 </div>
             </info-window>
         </ng-map>

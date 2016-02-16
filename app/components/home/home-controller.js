@@ -4,6 +4,7 @@
 
 angular.module("flamingoApp").controller("HomeCtrl", ['$scope', 'Http', 'NgMap', 'Utils', 'Constants', 'toastr',
     function ($scope, Http, NgMap, Utils, Constants, toastr) {
+        $scope.map = null;
         $scope.render = true;
         $scope.statistics = [];
         $scope.filterData = {
@@ -68,7 +69,6 @@ angular.module("flamingoApp").controller("HomeCtrl", ['$scope', 'Http', 'NgMap',
             var vehiclesNumber;
             for (var i=0; i<$scope.statistics.length; i++) {
                 vehiclesNumber = $scope.statistics[i].vehiclesNumber;
-                console.log("Vehicle Number: " + vehiclesNumber);
                 if (vehiclesNumber <= markerLimits.NORMAL) {
                     $scope.statistics[i].icon = markerIcons.NORMAL;
                 } else if (vehiclesNumber >= markerLimits.NORMAL && vehiclesNumber <= markerLimits.MEDIUM) {
@@ -99,9 +99,9 @@ angular.module("flamingoApp").controller("HomeCtrl", ['$scope', 'Http', 'NgMap',
          * Show info window on marker click
          * @param statistic
          */
-        $scope.showInfoWindow = function (e, statistic) {
+        $scope.showIW = function (e, statistic) {
             $scope.selectedStatistic = statistic;
-            $scope.map.showInfoWindow('marker-iw', statistic.location.title);
+            $scope.map.showInfoWindow("marker-iw", $scope.selectedStatistic.location.name);
         }
     }
 ]);

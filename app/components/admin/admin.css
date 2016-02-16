@@ -2,3 +2,37 @@
     display: block;
     width: 100%;
 }
+
+.table-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    border-radius: 4px;
+}
+
+.table-container,.table-container th {
+    text-align: center !important;
+}
+
+.entity-container .table-container {
+    background-color: rgb(214, 221, 227);
+}
+
+.entity-container .table-container td, .entity-container .table-container th {
+    border-bottom: 1px solid #3E5771 ;
+}
+
+.spinner-container {
+    width: 100%;
+    height:100%;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+    display: none;
+}
+
+.spinner {
+
+}

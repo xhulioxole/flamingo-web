@@ -4,8 +4,8 @@ angular.module("flamingoApp").config(['$httpProvider', function($httpProvider) {
         return {
             'request': function (config) {
                 config.headers = config.headers || {};
-                if (localStorageService.get(Constants.Keys.USER_DATA) && localStorageService.get(Constants.Keys.USER_DATA).token) {
-                    config.headers.Authorization = "Bearer " + localStorageService.get(Constants.Keys.USER_DATA).token;
+                if (localStorageService.get(Constants.Keys.USER_DATA) && localStorageService.get(Constants.Keys.TOKEN)) {
+                    config.headers.Authorization = "Bearer " + localStorageService.get(Constants.Keys.TOKEN);
                 }
                 return config;
             },

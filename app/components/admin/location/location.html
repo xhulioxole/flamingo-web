@@ -1,1 +1,23 @@
-location
+<div class="entity-container">
+    <h3 class="view-title">Vendodhjet</h3>
+    <br/>
+    <div class="entity-filter"></div>
+    <div class="table-container">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Emri</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="location in locations">
+                <td>{{location.name}}</td>
+                <td>{{location.lat}}</td>
+                <td>{{location.lng}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

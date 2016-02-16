@@ -2,8 +2,8 @@
  * Created by Xhulio on 2/14/2016.
  */
 
-angular.module("flamingoApp").controller("LoginCtrl", ['$scope', 'Http', 'toastr', '$location', 'localStorageService', 'Constants',
-    function ($scope, Http, toastr, $location, localStorageService, Constants) {
+angular.module("flamingoApp").controller("LoginCtrl", ['$scope', 'Http', 'toastr', '$location', 'localStorageService', 'Constants', 'Utils',
+    function ($scope, Http, toastr, $location, localStorageService, Constants, Utils) {
         $scope.user = {
             email: '',
             password: ''
@@ -13,6 +13,7 @@ angular.module("flamingoApp").controller("LoginCtrl", ['$scope', 'Http', 'toastr
          * Do login
          */
         $scope.login = function () {
+            Utils.showLoadingMask();
             Http.POST(Constants.Url.LOGIN, $scope.user)
                 .then(function (success) {
                     var response = success.data ? success.data : success;
@@ -25,7 +26,10 @@ angular.module("flamingoApp").controller("LoginCtrl", ['$scope', 'Http', 'toastr
                     }
                 }, function (error) {
                     toastr.error(Constants.Messages.LOGIN_ERROR);
-                });
+                })
+                .finally(function () {
+                    Utils.hideLoadingMask();
+                })
         };
     }
 ]);

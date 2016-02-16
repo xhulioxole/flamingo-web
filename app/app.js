@@ -5,10 +5,15 @@ angular.module('flamingoApp', [
     'ngRoute',
     'uiGmapgoogle-maps',
     'toastr',
-    'ui.bootstrap.datetimepicker'
+    'ui.bootstrap.datetimepicker',
+    'LocalStorageModule'
 ])
 
-.run(['$rootScope', '$location', 'Constants', function ($rootScope, $location, Constants) {
+.config(function (localStorageServiceProvider) {
+    localStorageServiceProvider.setPrefix("flamingoApp")
+})
+
+.run(['$rootScope', '$location', 'Constants', 'localStorageService', function ($rootScope, $location, Constants, localStorageService) {
     $rootScope.$on('$routeChangeStart', function (event, next) {
         // Prevent opening login if logged in
         if ($location.path() === '/login' && localStorageService.get(Constants.Keys.USER_DATA) && localStorageService.get(Constants.Keys.TOKEN)) {

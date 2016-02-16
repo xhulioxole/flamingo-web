@@ -28,3 +28,11 @@
 .statistics-row {
     margin: 40px 0;
 }
+
+.custom-chart {
+    height: 400px;
+}
+
+.chart-info {
+    color: #2C3E50;
+}

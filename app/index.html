@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="components/header/header.css">
   <link rel="stylesheet" href="components/footer/footer.css">
   <link rel="stylesheet" href="components/admin/admin.css">
+  <link rel="stylesheet" href="components/admin/spinner.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
   <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
 </head>
@@ -28,6 +29,7 @@
 
 <div ng-include="'components/header/header.html'"></div>
   <div class="main-container">
+    <div ng-include="'partials/spinner.html'"></div>
     <div ng-view></div>
   </div>
   <!--<div ng-include="'components/footer/footer.html'"></div>-->
@@ -54,7 +56,7 @@
   <script src="components/statistics/statistics-controller.js"></script>
   <script src="components/contact/contact-controller.js"></script>
   <script src="components/admin/admin-controller.js"></script>
-  <script src="components/login"></script>
+  <script src="components/login/login-controller.js"></script>
    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </body>
 </html>

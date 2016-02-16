@@ -1,1 +1,23 @@
-Support
+<div class="entity-container">
+    <h3 class="view-title">Support</h3>
+    <br/>
+    <div class="entity-filter"></div>
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Emri</th>
+                    <th>Email</th>
+                    <th>Mesazhi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="message in messages">
+                    <td>{{message.name}}</td>
+                    <td>{{message.from}}</td>
+                    <td>{{message.message}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

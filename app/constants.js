@@ -9,10 +9,11 @@ angular.module("flamingoApp").constant('Constants', {
         CONTACT: '/support',
         LOGIN: '/user/login',
         PUSH: '/push',
-        INITIAL: '/initial'
+        INITIAL: '/initial',
+        LOCATION: '/locations'
     },
     Messages: {
-        GENERAL_ERROR: "Ndonje nje error!",
+        GENERAL_ERROR: "Ndodhi nje error!",
         SUCCESS_CONTACT: "Mesazhi u dergua me sukses!",
         ERROR_CONTACT: "Ndodhi nje gabim gjate dergimit te mesazhit!",
         LOGIN_ERROR: "Email / Password Gabim!",

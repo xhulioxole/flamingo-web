@@ -1,6 +1,6 @@
 
-angular.module("flamingoApp").controller("AdminCtrl", ['$scope', 'Http', 'Constants', 'toastr',
-    function ($scope, Http, Constants, toastr) {
+angular.module("flamingoApp").controller("AdminCtrl", ['$scope', 'Http', 'Constants', 'toastr', '$location', 'localStorageService', 'Utils',
+    function ($scope, Http, Constants, toastr, $location, localStorageService, Utils) {
         $scope.push = {
             title: '',
             message: ''
@@ -21,14 +21,31 @@ angular.module("flamingoApp").controller("AdminCtrl", ['$scope', 'Http', 'Consta
          * Get locations
          */
         function getInitialData() {
+            Utils.showLoadingMask();
             Http.GET(Constants.Url.INITIAL, {})
                 .then(function (success) {
                     $scope.locations = success.data.locations;
-                    $scope.messagess = success.data.messagess;
+                    $scope.messages = success.data.messages;
                 }, function () {
                     toastr.error(Constants.Messages.GENERAL_ERROR)
+                })
+                .finally(function () {
+                    Utils.hideLoadingMask();
                 });
         }
+
+        /**
+         * Logout
+         */
+        $scope.logout = function () {
+            if (localStorageService.get(Constants.Keys.USER_DATA)) {
+                localStorageService.remove(Constants.Keys.USER_DATA);
+            }
+            if (localStorageService.get(Constants.Keys.TOKEN)) {
+                localStorageService.remove(Constants.Keys.TOKEN);
+            }
+            $location.path("/login");
+        };
 
         /**
          * Change view
@@ -42,14 +59,17 @@ angular.module("flamingoApp").controller("AdminCtrl", ['$scope', 'Http', 'Consta
          * Send push notification
          */
         $scope.sendPush = function () {
-            alert($scope.push);
+            Utils.showLoadingMask();
             Http.POST(Constants.Url.PUSH, $scope.push)
                 .then(function (success) {
                     $scope.push = {};
                     toastr.success(Constants.Messages.PUSH_SUCCESS);
                 }, function (error) {
                     toastr.error(Constants.Messages.PUSH_ERROR);
-                });
+                })
+                .finally(function () {
+                    Utils.hideLoadingMask()
+                })
         };
     }
 ]);

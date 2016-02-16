@@ -3,7 +3,7 @@
 // Declare app level module which depends on views, and components
 angular.module('flamingoApp', [
     'ngRoute',
-    'uiGmapgoogle-maps',
+    'ngMap',
     'toastr',
     'ui.bootstrap.datetimepicker',
     'LocalStorageModule'

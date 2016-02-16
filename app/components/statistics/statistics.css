@@ -1,4 +1,4 @@
-.statistics-container .filter-input {
+.home-entity-container .filter-input {
     height: 40px;
     background-color: rgb(214, 221, 227);
     border-radius: 4px;
@@ -6,7 +6,7 @@
     color: black;
 }
 
-.statistics-container .input-group-addon {
+.home-entity-container .input-group-addon {
     background-color: #2C3E50;
     color: white;
 }

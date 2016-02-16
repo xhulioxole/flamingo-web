@@ -10,7 +10,8 @@ angular.module("flamingoApp").constant('Constants', {
         LOGIN: '/user/login',
         PUSH: '/push',
         INITIAL: '/initial',
-        LOCATION: '/locations'
+        LOCATION: '/locations',
+        MAP_STATS: '/statistics/map'
     },
     Messages: {
         GENERAL_ERROR: "Ndodhi nje error!",

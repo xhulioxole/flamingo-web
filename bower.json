@@ -12,9 +12,9 @@
     "angular-mocks": "~1.4.0",
     "html5-boilerplate": "~5.2.0",
     "bootstrap": "^3.3.6",
-    "angular-google-maps": "^2.3.2",
     "angular-toastr": "^1.7.0",
     "angular-bootstrap": "^1.1.2",
-    "angular-local-storage": "^0.2.3"
+    "angular-local-storage": "^0.2.3",
+    "ngmap": "^1.16.7"
   }
 }

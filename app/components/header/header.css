@@ -20,5 +20,5 @@
 .logo {
     width: 40px;
     position: relative;
-    top: -4px;
+    top: -10px !important;
 }
